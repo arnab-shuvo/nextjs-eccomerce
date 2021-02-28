@@ -3,6 +3,9 @@ import React from 'react';
 import { ProductDetailWrapper } from './styled';
 import { useSelector } from 'react-redux';
 import Head from 'next/head';
+import currencyIcon from '../../constants/currency';
+import ProductTab from './product-info-tabs';
+
 interface IProductDetails {
 	product: IProduct;
 }
@@ -28,11 +31,14 @@ const ProductDetail: React.FC<IProductDetails> = ({ product }) => {
 						</p>
 						<p className={'product-description'}>{product.description}</p>
 						<p className={'product-price'}>
-							{`${currencyStore.currentCurrency}: `}
+							{`${currencyIcon[currencyStore.currentCurrency]}`}
 							<span>{exchangedPrice.toFixed(2)}</span>
 						</p>
 						<button className={'product-buy'}>Add to Cart</button>
 					</Grid>
+				</Grid>
+				<Grid item container md={7} lg={7} xl={7} xs={12} spacing={2}>
+					<ProductTab />
 				</Grid>
 			</ProductDetailWrapper>
 		</>

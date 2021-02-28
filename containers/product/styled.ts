@@ -26,10 +26,10 @@ export const ProductDetailWrapper = styled(Grid)`
 		&-price {
 			width: 100%;
 			padding: 10px 0;
-			font-size: 12px;
+			font-size: 25px;
+			color: #3a9dbc;
 			span {
 				color: #3a9dbc;
-				font-size: 25px;
 			}
 		}
 		&-category {
